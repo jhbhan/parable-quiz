@@ -1,0 +1,142 @@
+body {
+  background: linear-gradient(135deg, #111, #000);
+  font-family: "Courier New", monospace;
+  color: white;
+  margin: 0;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.card {
+  background: #1e1e1e;
+  border: 6px solid #444;
+  padding: 30px;
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #ffdd00;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.hint {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.start-btn,
+.restart-btn {
+  background: #28a745;
+  border: 4px solid #1c7c32;
+  color: white;
+  font-size: 1.5rem;
+  padding: 15px 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.2s;
+}
+
+.start-btn:hover,
+.restart-btn:hover {
+  background: #1c7c32;
+}
+
+.score-box {
+  border: 3px solid #28a745;
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #28a745;
+}
+
+.question-progress {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 10px;
+}
+
+.question-text {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.answers-grid {
+  display: grid;
+  gap: 15px;
+}
+
+.answer-btn {
+  background: #333;
+  border: 4px solid #555;
+  padding: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+  transition: background 0.2s;
+}
+
+.answer-btn:hover {
+  background: #444;
+}
+
+/* When answered */
+.answer-btn.correct {
+  background: #28a745;
+  border-color: #1c7c32;
+}
+
+.answer-btn.wrong {
+  background: #c0392b;
+  border-color: #962d22;
+}
+
+.answer-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.results-list {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.result-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 3px solid #666;
+}
+
+.result-item.correct {
+  border-color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+}
+
+.result-item.wrong {
+  border-color: #c0392b;
+  background: rgba(192, 57, 43, 0.1);
+}
+
+.correct-text {
+  color: #28a745;
+}
+
+.wrong-text {
+  color: #c0392b;
+}
