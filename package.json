@@ -1,6 +1,6 @@
 {
   "name": "@jhbhan/parable-quiz",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A react-based quiz app for the parables of Jesus",
   "type": "module",
   "main": "dist/index.cjs",
