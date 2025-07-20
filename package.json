@@ -1,17 +1,25 @@
 {
-  "name": "parable-quiz",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@jhbhan/parable-quiz",
+  "version": "1.0.0",
+  "description": "A react-based quiz app for the parables of Jesus",
   "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Jason Bhan",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsup src/index.tsx --format cjs,esm --dts",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tsup": "^8.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
