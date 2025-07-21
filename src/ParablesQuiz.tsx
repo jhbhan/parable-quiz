@@ -1,4 +1,3 @@
-import './ParablesQuiz.css'
 import { useState, useCallback } from "react";
 import { fetchParableQuizQuestions, type ParableQuestion } from './api';
 

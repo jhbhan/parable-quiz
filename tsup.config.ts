@@ -7,10 +7,5 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   external: ["react", "react-dom"],
-  injectStyle(css, fileId) {
-    if (fileId.endsWith("ParablesQuiz.css")) {
-      return css;
-    }
-    return "";
-  },
+  injectStyle: true,
 });
