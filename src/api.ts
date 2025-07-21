@@ -8,7 +8,11 @@ export type ParableQuestion = {
 export const fetchParableQuizQuestions = async (count: number) => {
     try {
         const url = `https://8539852b27d737c54d69d5a15610e246.balena-devices.com/trivia?count=${count+10}`;
-        const response = await fetch(url);if (!response.ok) {
+        console.log(url);
+        const response = await fetch(url, {
+            cache: 'no-cache',
+        });
+        if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const data = await response.json() as ParableQuestion[];
