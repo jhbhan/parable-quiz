@@ -1,4 +1,3 @@
-import './ParablesQuiz.css'
 import { useState, useCallback } from "react";
 import { fetchParableQuizQuestions, type ParableQuestion } from './api';
 
@@ -18,15 +17,16 @@ export default function TriviaGame() {
   const [results, setResults] = useState<QuestionResult[]>([]);
   const [showResults, setShowResults] = useState(false);
   const [questions, setQuestions] = useState<ParableQuestion[]>([]);
+  const [numberOfQuestions, setNumberOfQuestions] = useState(10);
 
   const currentQuestion = questions[currentQuestionIndex];
 
   const handleStartGame = useCallback(async () => {
     setGameStarted(true);
-    const questions = await fetchParableQuizQuestions(10);
+    const questions = await fetchParableQuizQuestions(numberOfQuestions);
 
     setQuestions(questions);
-  }, []);
+  }, [numberOfQuestions]);
 
   const handleAnswerClick = useCallback(
     (answer: string) => {
@@ -94,9 +94,25 @@ export default function TriviaGame() {
         <div className="card">
           <h1 className="title">Parables Quiz</h1>
           <p className="subtitle">Do You Know Your Parables?</p>
-          <button className="start-btn" onClick={handleStartGame}>
-            Start Game
-          </button>
+          <div className="start-section">
+            <label htmlFor="numberOfQuestions" className="label">
+              Number of Questions:
+            </label>
+            <input
+              className="number-input"
+              type="number"
+              min={0}
+              max={23}
+              value={numberOfQuestions}
+              onChange={(e) => {
+                const value = Math.min(23, Math.max(0, Number(e.target.value) || 0));
+                setNumberOfQuestions(value);
+              }}
+            />
+            <button className="start-btn" onClick={handleStartGame}>
+              Start Game
+            </button>
+          </div>
           <p className="hint">Press START to begin</p>
         </div>
       </div>
